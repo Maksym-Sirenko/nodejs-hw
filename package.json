@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maksym-Sirenko/nodejs-hw.git"
+  },
+  "keywords": [],
+  "author": "Max Sirenko <toyotasan@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maksym-Sirenko/nodejs-hw/issues"
+  },
+  "homepage": "https://github.com/Maksym-Sirenko/nodejs-hw#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "nodemon": "^3.1.11"
+  }
+}
