@@ -28,8 +28,8 @@ app.use(logger);
 app.use(authRoutes);
 app.use(noteRouter);
 
-app.use(errors());
 app.use(notFoundHandler);
+app.use(errors());
 app.use(errorHandler);
 
 await connectMongoDB();

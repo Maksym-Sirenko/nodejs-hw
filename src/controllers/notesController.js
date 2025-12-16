@@ -8,7 +8,6 @@ import createHttpError from 'http-errors';
 // };
 
 export const getAllNotes = async (req, res, next) => {
-  try {
     const {
       page = 1,
       perPage = 10,
@@ -40,14 +39,12 @@ export const getAllNotes = async (req, res, next) => {
       totalPages,
       notes,
     });
-  } catch (error) {
-    next(error);
-  }
+
 };
 
 export const getNoteById = async (req, res, next) => {
   const { noteId } = req.params;
-  const note = await Note.findById({_id: noteId, userId: req.user._id});
+  const note = await Note.findOne({_id: noteId, userId: req.user._id});
 
   if (!note) {
     return next(createHttpError(404, 'Note not found'));
