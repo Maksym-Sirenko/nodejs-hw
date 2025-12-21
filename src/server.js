@@ -1,7 +1,8 @@
 // src/server.js
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import 'dotenv/config';
+
 
 import { connectMongoDB } from './db/connectMongoDB.js';
 import { logger } from './middleware/logger.js';
@@ -11,9 +12,11 @@ import noteRouter from './routes/notesRoutes.js';
 import { errors } from 'celebrate';
 import authRoutes from './routes/authRoutes.js';
 import cookieParser from "cookie-parser";
+import userRouter from './routes/userRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
+
 
 app.use(
   express.json({
@@ -27,6 +30,7 @@ app.use(logger);
 
 app.use(authRoutes);
 app.use(noteRouter);
+app.use(userRouter);
 
 app.use(notFoundHandler);
 app.use(errors());
